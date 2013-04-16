@@ -1,0 +1,38 @@
+pollistics database 
+user_id = pollistics
+password = Cabrillo#2013
+
+CREATE TABLE poll_data (
+poll_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+count_a INT DEFAULT 0,
+count_b INT DEFAULT 0,
+count_c INT DEFAULT 0,
+count_d INT DEFAULT 0,
+text_a VARCHAR(40) , 
+text_b VARCHAR(40) , 
+text_c VARCHAR(40) , 
+text_d VARCHAR(40) ,
+question_text varchar (400), 
+last_update DATETIME NOT NULL, 
+PRIMARY KEY (poll_id)
+);
+
+
+INSERT INTO poll_data ( count_a, count_b, count_c, count_d, text_a, text_b, text_c, text_d, question_text, last_update) VALUES
+( 0,0,0,0, 'Beginner', 'Intermediate', 'Advanced', 'Expert','Please characterize your prior Java programming skills', now()),
+( 0,0,0,0, 'Android', 'iOS', 'Blackberry', 'Symbian','What mobile system are you most interested in developing for', now()),
+( 0,0,0,0, '0-2 Miles', '3-5 Miles', '5-10 Miles', 'More than 10 Miles','How far do you travel to attend Cabrillo', now()),
+( 0,0,0,0, 'Great', 'Really Great', 'Extra Super Great', 'The Greatest Ever','How do you rate the class so far', now());
+
+CREATE TABLE poll_open (
+poll_open_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+poll_id MEDIUMINT UNSIGNED,  
+PRIMARY KEY (poll_open_id)
+);
+
+insert into poll_open (poll_id) value (1);
+
+// Add Date to this soon!
+UPDATE poll_data SET $update_column = $update_column+1 WHERE poll_id=1
+
+UPDATE users SET $user_level = 1 WHERE user_id=2;
