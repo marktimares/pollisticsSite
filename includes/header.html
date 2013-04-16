@@ -1,0 +1,14 @@
+<?php # Script 16.1 - header.html
+// This page begins the HTML header for the site.
+
+// Start output buffering:
+ob_start();
+
+// Initialize a session:
+session_start();
+
+// Check for a $page_title value:
+if (!isset($page_title)) {
+	$page_title = 'User Registration';
+}
+?>

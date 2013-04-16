@@ -1,0 +1,31 @@
+<div id="Menu">
+Accounts Menu:<br>
+<small><a href="../index.php" title="Home Page">APS Home</a><br /></small>
+<?php # Script 16.2 - footer.html
+// This page completes the HTML template.
+// Display links based upon the login status:
+echo '<small>';
+if (isset($_SESSION['user_id'])) {
+
+	echo '<a href="reg_logout.php" title="Logout">Logout</a><br />
+			<a href="reg_change_password.php" title="Change Your Password">Change Password</a><br />';
+
+	// Add links if the user is an administrator:
+	if ($_SESSION['user_level'] == 1) {
+
+		echo '<a href="reg_view_users.php" title="View All Users">View Users</a><br />
+				<a href="#">Some Admin Page</a><br />';
+	}
+	
+} else { //  Not logged in.
+
+	echo '<a href="reg_register.php" title="Register for the Site">Register</a><br />
+<a href="reg_login.php" title="Login">Login</a><br />
+<a href="reg_forgot_password.php" title="Password Retrieval">Retrieve Password</a><br />
+';
+
+}
+echo '</small>';
+?>
+
+</div>
